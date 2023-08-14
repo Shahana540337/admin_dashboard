@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="./asset/images/a.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Gloock&family=Josefin+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="top_title">Add New Product</h1>
+    </div>
+                <!-- ----------------- START ADD PRODUCT ----------------- -->
+    <section class="commonSection">
+        <div class="container">
+            
+            <div class="row">
+    
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">Product Name :*</label><br>
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">SKU (Barcode number) :<span><i class="fa-solid fa-info infoicon"></i></span></label><br>
+                    <input type="text" name="sku" placeholder="SKU (Barcode number)">
+                </div>
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">Barcode Type :*</label><br>
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>Please Select </option>
+                        <option value="none">Code 128 (C128) </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+                </div>
+    
+            </div>
+            
+            <div class="row">
+    
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">Unit :*</label><br>
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>Please Select </option>
+                        <option value="none">pieces (Pc(s)) </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">Brand :*</label><br>
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>Please Select </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+                </div>
+    
+            </div>
+
+            <div class="row">
+    
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">Category :*</label><br>
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>Please Select </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">Sub category :</label><br>
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>Please Select </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-6 customField">
+                    <label for="">Busniess Location :<span><i class="fa-solid fa-info infoicon"></i></span></label><br>
+                    <input type="text" name="location" placeholder="">
+                </div>
+    
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 ">
+                    <div class="productCol">
+                        <input class="topcheckbox" type="checkbox" name="managestock"><p>Manage Stock ?</p><span><i class="fa-solid fa-info infoicon"></i></span>
+                    </div>
+                    <p style="font-style: italic; color: #a1a1a1;">Enable stock management at product level</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label for="">Product image :</label><br>
+                    <input type="file" onchange="readURL(this)" accept="image/*">
+                    <p style="font-size: 14px; color: #a1a1a1;">Max File Size : 100MB </p>
+                    <p style="font-size: 14px; color: #a1a1a1;">Aspect ratio should be 1:1 </p>
+                </div>
+                <div class="col-lg-4 col-md-6"></div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <label for="">Product Description :</label><br>
+                    <textarea name="productdescription" id="productdescription" cols="50" rows="7"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+                <!-- ----------------- END ADD PRODUCT ----------------- -->
+
+
+                <!-- ----------------- START Product Description ----------------- -->
+
+    <section class="commonSection">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 productCol">
+                    <input class="topcheckbox" type="checkbox" name="enableproductdescription"><p>Enable Product Description</p><span><i class="fa-solid fa-info infoicon"></i></span>
+                </div>
+                <div class="col-lg-4 col-md-4 productCol">
+                    <input class="topcheckbox" type="checkbox" name="notforselling"><p>Not For Selling</p><span><i class="fa-solid fa-info infoicon"></i></span>
+                </div>
+                <div class="col-lg-4 col-md-4 productCol">
+                    <input class="topcheckbox" type="checkbox" name="iMEi"><p>Enable IMEi</p><span><i class="fa-solid fa-info infoicon"></i></span>
+                </div>
+    
+            </div>
+    
+            <div class="row">
+    
+                <div class="col-12 productweight">
+                    <label for="">Weight :</label><br>
+                    <input type="text" name="weight" placeholder="Weight">
+                </div>
+    
+            </div>
+    
+            <div class="row">
+    
+                <div class="col-lg-3 col-md-6 customField">
+                    <label for="">Custom Field 1 :</label><br>
+                    <input type="text" name="customfield1" placeholder="Custom Field 1">
+                </div>
+                <div class="col-lg-3 col-md-6 customField">
+                    <label for="">Custom Field 2 :</label><br>
+                    <input type="text" name="customfield2" placeholder="Custom Field 2">
+                </div>
+                <div class="col-lg-3 col-md-6 customField">
+                    <label for="">Custom Field 3 :</label><br>
+                    <input type="text" name="customfield3" placeholder="Custom Field 3">
+                </div>
+                <div class="col-lg-3 col-md-6 customField">
+                    <label for="">Custom Field 4 :</label><br>
+                    <input type="text" name="customfield4" placeholder="Custom Field 4">
+                </div>
+    
+            </div>
+
+        </div>
+
+    </section>
+
+                <!-- ----------------- END Product Description ----------------- -->
+
+
+                <!-- ----------------- START Product Description ----------------- -->
+
+    <section class="commonSection">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <label for="">Applicable Tax :</label><br>
+
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>None </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label for="">Selling Price Tax Type :*</label><br>
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>Exclusive </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="">Selling Price Tax Type :*</label><span><i class="fa-solid fa-info infoicon"></i></span><br>
+                    <select name="applicable" id="applicable">
+                        <option value="none" hidden>Exclusive </option>
+                        <option value="none">1</option>
+                        <option value="none">2</option>
+                        <option value="none">3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12  searchbar">
+                    <i class="fa-solid fa-magnifying-glass "></i>
+                    <input type="search" name="search" placeholder="Enter Product name / SKU / Scan bar code">
+                </div>
+            </div>
+
+            <div class="row product_detail_title">
+                <div class="col-lg-2 product_detail">
+                    <p>Product Name</p>
+                </div>
+                <div class="col-lg-2 product_detail">
+                    <p>Quantity</p>
+                </div>
+                <div class="col-lg-4 product_detail">
+                    <p>Purchase Price (Excluding Tax)</p>
+                </div>
+                <div class="col-lg-3 product_detail">
+                    <p>Total Amount (Exc. Tax)</p>
+                </div>
+                <div class="col-lg-1 product_detail">
+                    <p><i class="fa-solid fa-trash"></i></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2 total_amount">
+                    <p></p>
+                </div>
+                <div class="col-lg-2 total_amount">
+                    <p>Net Total Amount</p>
+                </div>
+                <div class="col-lg-4 total_amount">
+                    <p></p>
+                </div>
+                <div class="col-lg-3 total_amount">
+                    <input style="width: 100%;" type="text" placeholder="$0.00">
+                </div>
+                <div class="col-lg-1 total_amount">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label for="">x Margin(%) :</label><br>
+                    <input type="text" name="margin" placeholder="0.00">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label for="">Default Selling Price :*</label><br>
+                    <input type="text" name="defaultsellingprice" placeholder="0.00">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+                <!-- ----------------- END Product Description ----------------- -->
+
+
+                <!-- ----------------- START IMPORTANT BUTTONS ----------------- -->
+    
+
+    <section class="important_button">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-7  col-md-6" >
+                    <div class="row">
+                        <div class="col-lg-7 buttonCol ">
+                            <p  style="background: #e2972e;">Save & Add Selling-Price-Grop prices</p>
+                        </div>
+                        <div class="col-lg-5 buttonCol ">
+                            <p  style="background: #ac93d4;">Save & Add Operating Stock</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3  col-md-6" >
+                    <div class="row">
+                        <div class="col-lg-8 buttonCol ">
+                            <p  style="background: rgb(227, 40, 83);">Save & Add Another</p>
+                        </div>
+                        <div class="col-lg-4 buttonCol ">
+                            <p  style="background: #241ec0;">Save</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+    </section>
+
+                <!-- ----------------- END IMPORTANT BUTTONS ----------------- -->
+
+
+                <!-- ----------------- START COPYRIGHT PART ----------------- -->
+
+    <section class="copyright_part">
+        <div class="container">
+            <p>Copyright <i class="fa-regular fa-copyright"></i> 2023 . All rights reserved</p>
+        </div>
+    </section>
+
+                <!-- ----------------- END COPYRIGHT PART ----------------- -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./asset/js/script.js"></script>
+</body>
+</html>
